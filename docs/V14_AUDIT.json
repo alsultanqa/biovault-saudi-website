@@ -1,0 +1,56 @@
+{
+  "source": "Current deployed V11 HTML retained plus V14 film overlays",
+  "html_size": 1728098,
+  "assets": {
+    "balance": {
+      "bytes": 5668739,
+      "sha256": "4d793a761e7b2778a824a52f8456f570b6b84620dcf4a0e267d2d4e67b418622"
+    },
+    "venture": {
+      "bytes": 2017218,
+      "sha256": "d3af13b9db04be8cfd0d4996ba71b6515500a62ac4f01f496403cf6fc2dfe993"
+    },
+    "endless": {
+      "bytes": 4461308,
+      "sha256": "cc90babfcb5201f9033140bdb1eba060a2735ac8122bd9a8f75b5c5c374c7bd4"
+    },
+    "custom": {
+      "bytes": 3762947,
+      "sha256": "21667abadb45efdbe24ed1e78857910b0146b8c40237ec55f02531d8859738a0"
+    }
+  },
+  "structure": {
+    "balance": {
+      "stage": true,
+      "asset_path": false
+    },
+    "venture": {
+      "stage": true,
+      "asset_path": false
+    },
+    "endless": {
+      "stage": true,
+      "asset_path": false
+    },
+    "custom": {
+      "stage": true,
+      "asset_path": false
+    },
+    "data-select=\"balance\"": true,
+    "data-select=\"venture\"": true,
+    "data-select=\"endless\"": true,
+    "data-select=\"custom\"": true,
+    "data-film-ar": true,
+    "id=\"balanceFilm\"": true,
+    "id=\"ventureFilm\"": true,
+    "id=\"biovault-v14-no-duplicate-films\"": true,
+    "id=\"biovault-v13-film-controller\"": true
+  },
+  "risks": [
+    "Duplicate original film markup remains in DOM but hidden through CSS; should remove instead of hide after regression testing",
+    "Browser-dependent autoplay/audio: audible playback requires visitor interaction",
+    "Full visual and mobile accessibility regression test outstanding",
+    "Large single-file legacy inline HTML can be difficult to maintain; refactor only after visual snapshot approval",
+    "GitHub site-v14 is a versioned source snapshot, not yet wired to Vercel continuous deployment"
+  ]
+}
