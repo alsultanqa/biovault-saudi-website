@@ -243,6 +243,17 @@ function next(){state.scene=state.scene&gt;=3?0:state.scene+1;render()}$(&#x27;n
   <div class="scene-interface wrap" id="sceneInterface"><div class="scene-meta"><span id="sceneCount">01 / 04</span><span class="meta-rule"></span><span id="sceneLabel">SOURCE & CONTEXT</span></div><div class="scene-describe"><div class="scene-headline" id="sceneHeadline">One decision. What supports it?</div><p id="sceneExplanation">Explore the illustrative records and see which statements remain unverified.</p></div><div class="scene-nav"><button id="previousStep" class="round-nav" aria-label="Previous chapter">←</button><button id="nextStep" class="round-nav emph" aria-label="Next chapter">→</button><button id="replayScene" class="replay" data-i18n="replay">REPLAY ↺</button></div></div>
   <div class="auto-play-story wrap"><span id="storyStatus" role="status" aria-live="polite">The chapters advance automatically while visible.</span><button type="button" id="storyAutoToggle" aria-pressed="true">Ⅱ Pause auto story</button></div>
   <div class="progress-pips" id="scenePips" aria-label="Experience chapters"></div>
+
+<!-- BioVault approved in-experience navigation: primary solution selector remains unchanged. -->
+<div class="bv-solution-nav wrap" id="bvSolutionNav" aria-label="Navigate solution experiences">
+  <div class="bv-solution-nav-caption"><span id="bvNavCounter">01 / 04</span><strong id="bvNavCurrent">BalanceChain</strong></div>
+  <div class="bv-solution-nav-actions">
+    <button type="button" id="bvNavPrevious" class="bv-nav-quiet">← Previous Project</button>
+    <button type="button" id="bvNavReplay" class="bv-nav-quiet">↻ Replay Experience</button>
+    <button type="button" id="bvNavAll" class="bv-nav-quiet">Explore All Solutions</button>
+    <button type="button" id="bvNavNext" class="bv-nav-next">Explore Next Solution →</button>
+  </div>
+</div>
   <div class="disclaimer wrap" id="disclaimer"><span class="disclaimer-icon">ⓘ</span><p data-i18n="disclaimer">All scenes are designed with fictional organizations, accounts and synthetic data. No connection to live banking, customers or third-party services. Illustrations are not proof of deployment or performance.</p></div>
  </section>
  <section class="outro wrap" id="connect"><div><div class="section-index"><span>03</span><i></i><span data-i18n="sectionConnect">THE NEXT CONVERSATION</span></div><h2 data-i18n="outroHeadline">A stronger question.<br><em>A more useful conversation.</em></h2><p data-i18n="outroText">Every meaningful partnership starts with a clear use case, an honest view of constraints and evidence worth testing.</p></div><a href="mailto:support@biovault.app?subject=BioVault%20Executive%20Briefing" class="button-primary"><span data-i18n="briefing">Request an executive briefing</span>↗</a></section>
@@ -372,4 +383,28 @@ document.addEventListener('click',e=>{if(e.target.closest('[data-select], [role=
 const old=document.getElementById('balanceVideo');if(old){old.muted=false;old.removeAttribute('muted');}
 console.info('BioVault V13 added films:',attached);
 })();
-</script></body></html>
+</script>
+<style id="bv-solution-nav-style">
+.bv-solution-nav{margin:clamp(25px,4vw,55px) auto 18px;padding-block:25px;border-top:1px solid rgba(129,211,190,.3);border-bottom:1px solid rgba(129,211,190,.14);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.bv-solution-nav-caption{display:flex;flex-direction:column;gap:7px}.bv-solution-nav-caption span{font-size:11px;letter-spacing:.2em;color:#8dcbbb}.bv-solution-nav-caption strong{font-size:clamp(17px,2vw,25px);font-weight:600;color:#f2f8f6}
+.bv-solution-nav-actions{display:flex;gap:9px;flex-wrap:wrap}.bv-solution-nav button{border:1px solid rgba(132,207,186,.28);border-radius:11px;padding:13px 15px;background:rgba(8,39,43,.7);color:#dcebe7;font-size:13px;transition:background .2s,border-color .2s,transform .2s}.bv-solution-nav button:hover{background:#143f3c;border-color:#50d9af;transform:translateY(-1px)}.bv-solution-nav button:focus-visible{outline:2px solid #44e8b7;outline-offset:3px}.bv-solution-nav .bv-nav-next{background:linear-gradient(115deg,#157e66,#249980);color:white;border-color:#48cba6;font-weight:600}.bv-solution-nav button[hidden]{display:none!important}
+@media(max-width:760px){.bv-solution-nav{gap:17px}.bv-solution-nav-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:9px}.bv-solution-nav button{padding:12px 8px;font-size:12px;min-height:47px}}
+</style>
+<script id="bv-solution-nav-script">
+(function(){'use strict';
+const nav=document.getElementById('bvSolutionNav');if(!nav)return;
+const selectButtons=()=>Array.from(document.querySelectorAll('.selector [data-select]'));
+const idOf=b=>b.dataset.select;const labelOf=b=>b.querySelector('span:nth-child(2)')?.textContent.trim()||b.textContent.trim();
+const current=()=>selectButtons().find(b=>b.classList.contains('active')||b.getAttribute('aria-selected')==='true')||selectButtons()[0];
+const stageOf=id=>document.getElementById('stage'+id.charAt(0).toUpperCase()+id.slice(1));
+const stopVideos=()=>document.querySelectorAll('video').forEach(v=>{if(!v.paused)v.pause()});
+const jump=(b)=>{if(!b)return;stopVideos();b.click();requestAnimationFrame(()=>{const stage=stageOf(idOf(b));const film=stage?.querySelector('.bv13-film')||stage?.querySelector('video')||stage;const target=film||document.getElementById('exhibitionBody');target?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});update()})};
+function update(){const buttons=selectButtons();if(!buttons.length)return;const i=Math.max(0,buttons.indexOf(current()));document.getElementById('bvNavCounter').textContent=String(i+1).padStart(2,'0')+' / '+String(buttons.length).padStart(2,'0');document.getElementById('bvNavCurrent').textContent=labelOf(buttons[i]);const prev=document.getElementById('bvNavPrevious'),next=document.getElementById('bvNavNext');prev.hidden=i===0;next.hidden=i===buttons.length-1;const ar=document.documentElement.lang==='ar'||document.documentElement.dir==='rtl';prev.textContent=ar?'→ المشروع السابق':'← Previous Project';document.getElementById('bvNavReplay').textContent=ar?'↻ إعادة التجربة':'↻ Replay Experience';document.getElementById('bvNavAll').textContent=ar?'عرض جميع المشاريع':'Explore All Solutions';next.textContent=ar?'استكشف المشروع التالي ←':'Explore Next Solution →';}
+document.getElementById('bvNavPrevious').addEventListener('click',()=>{const a=selectButtons(),i=a.indexOf(current());jump(a[i-1])});
+document.getElementById('bvNavNext').addEventListener('click',()=>{const a=selectButtons(),i=a.indexOf(current());jump(a[i+1])});
+document.getElementById('bvNavAll').addEventListener('click',()=>{stopVideos();document.querySelector('.selector')?.scrollIntoView({behavior:'smooth',block:'center'})});
+document.getElementById('bvNavReplay').addEventListener('click',()=>{const id=idOf(current()),stage=stageOf(id);stopVideos();const movie=stage?.querySelector('.bv13-film video')||stage?.querySelector('video');if(movie){try{movie.currentTime=0}catch(e){}movie.muted=false;movie.removeAttribute('muted');movie.play().catch(()=>{});} (movie||stage)?.scrollIntoView({behavior:'smooth',block:'start'});});
+document.querySelector('.selector')?.addEventListener('click',()=>setTimeout(update,0));document.getElementById('language')?.addEventListener('click',()=>setTimeout(update,0));new MutationObserver(update).observe(document.querySelector('.selector'),{subtree:true,attributes:true,attributeFilter:['class','aria-selected']});update();
+})();
+</script>
+</body></html>
