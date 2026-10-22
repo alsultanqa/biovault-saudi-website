@@ -1,3 +1,13 @@
+# CURRENT SOURCE — BIOVAULT V14 REVIEW
+
+**Authoritative review source:** [site-v14/index.html](site-v14/index.html), with four MP4 files under [site-v14/assets](site-v14/assets).
+
+**Governance and release instructions:** [docs/SITE_GOVERNANCE.md](docs/SITE_GOVERNANCE.md) · [Change history](docs/CHANGELOG.md) · [Audit](docs/V14_AUDIT.json).
+
+**Important:** legacy V6 redirect and README below are historical. Do not deploy V6 as the current design. Keep original BioVault production separate from V14 review until explicit approval.
+
+---
+
 # BioVault Saudi — Cinematic Website V6
 
 **الحالة:** نموذج تصميم وتجربة تفاعلية خاص للمراجعة — ليس موقعًا منشورًا ولا نسخة إنتاجية.

@@ -22,19 +22,23 @@
   "structure": {
     "balance": {
       "stage": true,
-      "asset_path": false
+      "asset_path": true,
+      "asset_path_validation": "Runtime builds src by concatenating assets/ + name + .mp4; verified in inline controller"
     },
     "venture": {
       "stage": true,
-      "asset_path": false
+      "asset_path": true,
+      "asset_path_validation": "Runtime builds src by concatenating assets/ + name + .mp4; verified in inline controller"
     },
     "endless": {
       "stage": true,
-      "asset_path": false
+      "asset_path": true,
+      "asset_path_validation": "Runtime builds src by concatenating assets/ + name + .mp4; verified in inline controller"
     },
     "custom": {
       "stage": true,
-      "asset_path": false
+      "asset_path": true,
+      "asset_path_validation": "Runtime builds src by concatenating assets/ + name + .mp4; verified in inline controller"
     },
     "data-select=\"balance\"": true,
     "data-select=\"venture\"": true,
