@@ -1,12 +1,23 @@
-# CURRENT SOURCE — BIOVAULT V14 REVIEW
+# BioVault Saudi — Current Production Website
 
-**Authoritative review source:** [site-v14/index.html](site-v14/index.html), with four MP4 files under [site-v14/assets](site-v14/assets).
+**Live public URL:** https://biovault-saudi-cinematic-preview.vercel.app/
 
-**Governance and release instructions:** [docs/SITE_GOVERNANCE.md](docs/SITE_GOVERNANCE.md) · [Change history](docs/CHANGELOG.md) · [Audit](docs/V14_AUDIT.json).
+**Source of truth:** `site-v14/index.html`, with video assets in `site-v14/assets/`.
 
-**Important:** legacy V6 redirect and README below are historical. Do not deploy V6 as the current design. Keep original BioVault production separate from V14 review until explicit approval.
+**Deployment:** The existing Vercel project `biovault-saudi-cinematic-preview` uses GitHub repository `alsultanqa/biovault-saudi-website`, branch `main`, with Root Directory `site-v14`. Changes to the main branch must be reviewed before publication.
+
+**Status:** Publicly accessible company presentation; not a private concept preview. Illustrative project scenarios remain explicitly labeled synthetic and are not claims of live customer integrations.
+
+**Rights:** © 2026 BioVault Software Solutions. All rights reserved. / © ٢٠٢٦ بيوفولت لحلول البرمجيات. جميع الحقوق محفوظة.
+
+**Domain note:** The Vercel URL above is live. A separately purchased company domain still requires its own DNS/Vercel domain connection; pushing code to GitHub does not connect DNS automatically.
+
+**Release documentation:** [Governance](docs/SITE_GOVERNANCE.md) · [Changelog](docs/CHANGELOG.md) · [Historical audit](docs/V14_AUDIT.json).
+
+The remainder below is an archived V6 development record and is **not** the active deployment instructions.
 
 ---
+
 
 # BioVault Saudi — Cinematic Website V6
 
