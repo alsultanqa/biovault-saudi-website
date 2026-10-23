@@ -1,20 +1,29 @@
-# BioVault Saudi — Current Production Website
+# BioVault Software Solutions — Official Saudi Website
 
-**Live public URL:** https://biovault-saudi-cinematic-preview.vercel.app/
+## Current live domain and deployment
+- **Official company domain:** https://biovaultsa.com
+- **www hostname:** https://www.biovaultsa.com
+- **Hosting:** **GitHub Pages only**. The custom domain is configured via the `CNAME` file on the `gh-pages` branch (`biovaultsa.com`); the GoDaddy DNS configuration was previously set for GitHub Pages.
+- **Live published files:** `gh-pages/index.html` and `gh-pages/assets/` (GitHub Pages publishing source: branch `gh-pages`, root).
+- **Editable authoritative source:** `main/site-v14/index.html` and `main/site-v14/assets/`.
+- Both HTML locations were synchronized on 2026-10-23, verified to have the same Git blob SHA.
+- **IMPORTANT:** Updating only `main` does **not** update the company website automatically. Until a verified native GitHub Pages deployment automation is configured, release by copying approved `main/site-v14/` contents into the `gh-pages/` root and committing there. Keep `CNAME` unchanged.
+- **DO NOT use Vercel for future release work**. It is historical/legacy and not the user-selected domain publishing path.
 
-**Source of truth:** `site-v14/index.html`, with video assets in `site-v14/assets/`.
+## Approved website details
+- Official emerald-and-silver BioVault brand, cinematic layout, untouched first project-selection menu, Arabic/English support.
+- Project experiences: BalanceChain, Venture Sentinel, EndlessJob, Custom Software, with internal Next/Previous/Replay/Explore All controls.
+- Intro brand film and project films committed under `assets/`. Keep sound enabled for user-triggered playback with a mute choice.
+- **Public contact addresses:** `info@biovaultsa.com` and `partners@biovaultsa.com`. Never restore obsolete `support@biovault.app`.
+- Footer copyright in both languages: © 2026 BioVault Software Solutions. All rights reserved. / © ٢٠٢٦ بيوفولت لحلول البرمجيات. جميع الحقوق محفوظة.
+- Do not show "Private Preview" or "Private Concept" on the public website. Still disclose that illustrative product scenarios use synthetic data.
+- Preserve DNS records needed for company email (MX, SPF, DKIM, etc.) if DNS work is ever necessary.
 
-**Deployment:** The existing Vercel project `biovault-saudi-cinematic-preview` uses GitHub repository `alsultanqa/biovault-saudi-website`, branch `main`, with Root Directory `site-v14`. Changes to the main branch must be reviewed before publication.
+## Release rule
+Check the `gh-pages` branch and the official domain before claiming live changes. A successful GitHub commit alone is not proof that a user's browser currently receives the latest page. No changes to domain/hosting platform without explicit user approval.
 
-**Status:** Publicly accessible company presentation; not a private concept preview. Illustrative project scenarios remain explicitly labeled synthetic and are not claims of live customer integrations.
-
-**Rights:** © 2026 BioVault Software Solutions. All rights reserved. / © ٢٠٢٦ بيوفولت لحلول البرمجيات. جميع الحقوق محفوظة.
-
-**Domain note:** The Vercel URL above is live. A separately purchased company domain still requires its own DNS/Vercel domain connection; pushing code to GitHub does not connect DNS automatically.
-
-**Release documentation:** [Governance](docs/SITE_GOVERNANCE.md) · [Changelog](docs/CHANGELOG.md) · [Historical audit](docs/V14_AUDIT.json).
-
-The remainder below is an archived V6 development record and is **not** the active deployment instructions.
+## Documentation
+See [governance](docs/SITE_GOVERNANCE.md) and [historical changelog](docs/CHANGELOG.md). Archived V6 instructions follow for record only.
 
 ---
 
