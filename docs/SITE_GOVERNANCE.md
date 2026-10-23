@@ -1,31 +1,36 @@
-# BioVault Saudi website — source of truth and change control
+# BioVault Saudi website — canonical production and governance
 
-## Immutable business/design decisions
-- Brand: approved emerald/silver BioVault mark. Do not redraw.
-- Approved cinematic visual composition, Arabic/English language switch and existing interactive product experiences must remain.
-- Four products: BalanceChain, Venture Sentinel, EndlessJob, Custom Software.
-- Exactly **one visible film per product**, followed by its interactive experience.
-- Viewer-initiated playback **with sound on**, optional mute. Never assume browsers permit audible autoplay.
-- Do not make unverified customer, central-bank or regulatory approval claims. Demos use synthetic data; actual operational boundaries must be clear.
+## Approved publishing architecture (2026-10-23)
+- **Live company domain:** https://biovaultsa.com (also www).
+- **Hosting platform:** GitHub Pages in repository `alsultanqa/biovault-saudi-website`, branch `gh-pages`, folder `/(root)`.
+- **GitHub Pages custom-domain file:** `gh-pages/CNAME`, contents exactly `biovaultsa.com`.
+- **Canonical editable source:** `main/site-v14/index.html` plus `main/site-v14/assets/`.
+- **Current published source:** `gh-pages/index.html` plus `gh-pages/assets/`.
+- These copies must remain in sync. Until automation is configured and tested, update *both* branches for every approved public release. GitHub Pages consumes `gh-pages`, **not** the `main` copy.
+- Vercel is legacy only and should not be used for this domain or future user-approved releases. Do not reconfigure the DNS or alter email MX/TXT records unnecessarily.
 
-## Canonical version locations
-- `site-v14/index.html` + `site-v14/assets/*.mp4`: complete V14 review site versioned in this repository. Assets must travel alongside HTML.
-- `docs/V14_AUDIT.json`: reproducible file-level audit and known limitations.
-- `preview/BioVault_Cinematic_V6_Offline.html`: LEGACY; do **not** deploy as the current website.
-- Official deployed production `biovault-saudi-cinematic-preview.vercel.app`: preserved legacy original; do not overwrite without explicit approval.
-- V14 review deployment: available via Vercel Review project's deployment URL; distinct project.
+## Non-negotiable content and experience decisions
+- Keep the approved emerald/silver BioVault branding and cinematic design; never replace logo or visual identity.
+- Preserve the first solution-selection menu **exactly as approved**.
+- Four current solutions: BalanceChain, Venture Sentinel, EndlessJob, Custom Software; add more via the existing approved selector as business evolves.
+- Inside each project: user-controlled Previous, Next, Replay, and Explore All controls. **No automatic jump to the next project**.
+- Exactly one visible film per project, followed by its interactive experience.
+- User-triggered video plays with sound, with a visible mute option; browsers may block unrequested audible autoplay.
+- Keep the 30-second company brand film and source assets alongside the page.
+- Public inboxes: `info@biovaultsa.com` and `partners@biovaultsa.com`.
+- Public footer: © BioVault Software Solutions; all rights reserved in English and Arabic.
+- Do not label the public website PRIVATE CONCEPT, PRIVATE PREVIEW, or similar.
+- Synthetic/fictional showcase disclosures are required; no unsupported claims of real customer integration or regulatory approval.
 
-## Safe edit workflow
-1. Start from `site-v14` (or later approved version), never from legacy V6.
-2. Back up existing version; change only requested elements; keep every other section intact.
-3. Create a new version branch or directory, update version changelog and audit.
-4. Test on desktop and mobile: pages, film playback/audio/mute, switching projects, interactive flows, both languages, no horizontal overflow, network errors, accessibility and console errors.
-5. Deploy to preview only. Get approval before changing official production URL.
-6. Preserve rollback pointer to last tested READY deployment.
+## Verification protocol
+1. Review the exact current `main/site-v14/` content before editing.
+2. Protect all unrelated UI, email links, videos, language switch and interactive demos.
+3. Confirm updated HTML and required assets in both `main/site-v14/` and `gh-pages/`; preserve CNAME.
+4. Verify rendered website and controls on both desktop and mobile when capable; don't claim browser tests if not done.
+5. Check Pages deployment and domain availability where the integration permits it. State honestly when end-to-end public-site verification cannot be completed.
+6. Keep a rollback point using Git commits. Public branch production changes need explicit approval.
 
-## Release checklist status
-- Four MP4 assets and four stage targets: verified.
-- Preview V14 built READY in Vercel; media V13 previously HTTP 200.
-- CSS hidden duplicates in V14: code verified, visual test outstanding.
-- Complete browser/device test: NOT YET VERIFIED.
-- GitHub-to-Vercel deployment automation: NOT YET CONFIGURED.
+## Historic records
+- `docs/V14_AUDIT.json` is a file-level audit made before current domain launch.
+- `preview/BioVault_Cinematic_V6_Offline.html` is a legacy prototype; never deploy.
+- Prior Vercel launch records are historical, **not** current infrastructure instructions.
