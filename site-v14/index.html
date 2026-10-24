@@ -146,6 +146,58 @@ html[dir="rtl"] .bv15-film-top{text-align:right}
 html[dir='rtl'] .footer>.bv-footer-contact{align-items:flex-start;text-align:start;}
 @media(max-width:720px){.footer{grid-template-columns:minmax(0,1fr);gap:27px}.footer>#bvCopyright{grid-column:1}}
 </style>
+
+<style id="bc2-review-styles">
+/* BalanceChain phase 2: isolated content layer, preserving film and simulation. */
+.bc2-story{--bc2-b:#06181e;--bc2-g:#47e4b1;--bc2-l:rgba(153,226,202,.18);width:min(1190px,calc(100% - 44px));margin:48px auto 38px;padding:0 0 16px;color:#e6f3ef;font-family:inherit;direction:ltr;text-align:left}
+html[lang="ar"] .bc2-story{direction:rtl;text-align:right}
+html:not([lang="ar"]) .bc2-ar,html[lang="ar"] .bc2-en{display:none!important}
+.bc2-steps{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid var(--bc2-l);padding:24px 0 27px;color:#9bbeb3;font-size:11px;letter-spacing:.055em}
+.bc2-steps span{display:inline-flex;align-items:center;gap:10px}
+.bc2-steps b{display:inline-grid;place-items:center;border:1px solid #326358;border-radius:50%;width:25px;height:25px;color:#92b7ab;font-size:10px}
+.bc2-steps .bc2-active{color:#d9f9e9}.bc2-steps .bc2-active b{border-color:#43dfaa;background:#12382e;color:#48edb3}
+.bc2-divider{opacity:.4}
+.bc2-eyebrow{text-transform:uppercase;color:var(--bc2-g);letter-spacing:.17em;font-weight:750;font-size:11px}
+.bc2-header{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);gap:35px;align-items:end;margin:0 0 30px}
+.bc2-header h3{font:400 clamp(31px,4.4vw,53px)/1.18 Georgia,'Noto Naskh Arabic',serif;margin:13px 0 0;letter-spacing:-.028em;max-width:760px;color:#fff}
+.bc2-header h3 em{font-style:normal;color:#75edc6}
+.bc2-header p{line-height:1.85;color:#c2d7d0;font-size:14px;margin:0}
+.bc2-bank{border:1px solid rgba(97,225,177,.34);background:linear-gradient(125deg,rgba(29,106,84,.29),rgba(3,22,29,.94) 60%);padding:27px clamp(19px,3vw,36px);border-radius:18px;display:grid;grid-template-columns:minmax(170px,.6fr) minmax(0,1.4fr);gap:28px;position:relative;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.14)}
+.bc2-bank::after{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(98,236,188,.12);border-radius:50%;right:-150px;top:-140px;pointer-events:none}
+.bc2-status{display:flex;gap:9px;align-items:center;color:#bdeed9;font-size:10px;letter-spacing:.14em;font-weight:760}
+.bc2-status i{display:block;flex-shrink:0;width:7px;height:7px;border-radius:50%;background:#47e4b1;box-shadow:0 0 12px rgba(71,228,177,.75)}
+.bc2-bank h4{font:400 34px/1.25 Georgia,'Noto Naskh Arabic',serif;margin:15px 0 6px;color:#fff}
+.bc2-bank-place{font-size:12px;color:#96c6b4}
+.bc2-bank-message{position:relative;z-index:1}
+.bc2-bank-message p{font-size:14px;color:#e6f2ec;line-height:1.9;margin:0 0 10px}
+.bc2-bank-note{font-size:11px!important;color:#a4c2b9!important;margin-top:8px!important}
+.bc2-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
+.bc2-card{border:1px solid rgba(143,217,191,.17);border-radius:15px;padding:27px 25px;background:linear-gradient(150deg,rgba(12,49,50,.82),rgba(3,21,28,.84));min-width:0}
+.bc2-card-flag{font-size:10px;letter-spacing:.15em;color:#73dcb3;font-weight:760}
+.bc2-card h4{font:400 clamp(23px,2.5vw,29px)/1.24 Georgia,'Noto Naskh Arabic',serif;color:#fff;margin:14px 0 12px}
+.bc2-card p{font-size:13px;line-height:1.85;color:#c3d8d1;margin:0}
+.bc2-flow{margin-top:17px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;align-items:stretch}
+.bc2-flow div{padding:10px 8px;background:#0d3435;border:1px solid #2d5b4e;border-radius:8px;font-size:11px;text-align:center;color:#d8f7e9;min-width:0;line-height:1.5}
+.bc2-flow small{display:block;color:#78cba9;font-size:9px;margin-top:3px}
+.bc2-usecases{border:1px solid rgba(143,217,191,.17);border-radius:15px;padding:27px 25px;background:rgba(4,29,36,.72)}
+.bc2-usecases h4{font:400 28px/1.2 Georgia,'Noto Naskh Arabic',serif;margin:9px 0 10px;color:#fff}
+.bc2-usecases p{font-size:13px;color:#b5d1c9;line-height:1.8;margin:0 0 16px;max-width:950px}
+.bc2-pills{display:flex;flex-wrap:wrap;gap:9px}
+.bc2-pills span{border-radius:50px;border:1px solid rgba(130,227,184,.3);background:#0c3535;padding:10px 15px;color:#e0f6ed;font-size:12px}
+.bc2-boundary{border-left:3px solid #4de3b4;padding:8px 18px;margin:26px 0 28px;background:rgba(15,64,57,.25)}
+html[lang="ar"] .bc2-boundary{border-left:0;border-right:3px solid #4de3b4}
+.bc2-boundary strong{font-size:13px;color:#71ecc0;display:block;margin-bottom:9px}
+.bc2-boundary p{font-size:12px;line-height:1.9;color:#c3d5d0;margin:0}
+.bc2-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.bc2-actions a{font-size:12px;font-weight:700;text-decoration:none;padding:14px 18px;border-radius:8px;display:inline-flex;justify-content:center;align-items:center;gap:12px;transition:transform .2s ease}
+.bc2-actions a:hover{transform:translateY(-2px)}
+.bc2-actions a:focus-visible{outline:2px solid #5df0c4;outline-offset:3px}
+.bc2-primary{color:#063029!important;background:linear-gradient(110deg,#48e8b1,#a6f4d0)}
+.bc2-secondary{color:#d8efe6!important;border:1px solid rgba(122,211,179,.38)}
+@media(max-width:740px){.bc2-story{width:min(100% - 26px,1190px);margin:22px auto 30px}.bc2-header,.bc2-bank,.bc2-cards{grid-template-columns:1fr;gap:15px}.bc2-header{margin-bottom:22px}.bc2-bank{padding:22px 18px}.bc2-card,.bc2-usecases{padding:21px 18px}.bc2-steps{gap:8px}.bc2-divider{display:none}.bc2-actions a{width:100%}.bc2-header h3{font-size:clamp(30px,8vw,43px)}}
+@media(max-width:340px){.bc2-flow{grid-template-columns:1fr}.bc2-steps{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.bc2-actions a{transition:none}}
+</style>
 </head>
 <body>
 <div class="filmgrain" aria-hidden="true"></div><div class="page-progress" id="pageProgress"></div>
@@ -252,7 +304,71 @@ function next(){state.scene=state.scene&gt;=3?0:state.scene+1;render()}$(&#x27;n
 })();
 &lt;/script&gt;
 &lt;/body&gt;&lt;/html&gt;
-" loading="eager"></iframe></div>
+" loading="eager"></iframe>
+<section class="bc2-story" id="balancechain-insight">
+  <div class="bc2-steps">
+    <span><b>01</b><span class="bc2-en">Cinematic story</span><span class="bc2-ar">الفيلم التعريفي</span></span>
+    <span class="bc2-divider">→</span>
+    <span><b>02</b><span class="bc2-en">Interactive demonstration</span><span class="bc2-ar">المحاكاة التفاعلية</span></span>
+    <span class="bc2-divider">→</span>
+    <span class="bc2-active"><b>03</b><span class="bc2-en">The technology explained</span><span class="bc2-ar">شرح التقنية</span></span>
+  </div>
+  <div class="bc2-header">
+    <div>
+      <div class="bc2-eyebrow"><span class="bc2-en">03 / BEYOND THE DEMONSTRATION</span><span class="bc2-ar">03 / ما وراء المحاكاة</span></div>
+      <h3><span class="bc2-en">Understand the value<br><em>behind the transaction.</em></span><span class="bc2-ar">افهم تاريخ القيمة<br><em>وليس فقط حركة المعاملة.</em></span></h3>
+    </div>
+    <p><span class="bc2-en">BalanceChain is designed as a supplementary value-state layer: an additional way to examine the identity and recorded relationships of monetary value alongside participating financial systems.</span><span class="bc2-ar">صُمّم BalanceChain ليضيف طبقة معلومات عن حالة القيمة المالية وهويتها والعلاقات المسجلة بينها، تعمل بجانب الأنظمة المالية المشاركة دون استبدالها.</span></p>
+  </div>
+  <div class="bc2-bank">
+    <div>
+      <div class="bc2-status"><i></i><span class="bc2-en">TECHNICAL TESTING PHASE</span><span class="bc2-ar">مرحلة الاختبارات التقنية</span></div>
+      <h4><span class="bc2-en">Doha Bank</span><span class="bc2-ar">بنك الدوحة</span></h4>
+      <span class="bc2-bank-place"><span class="bc2-en">Qatar · Banking collaboration</span><span class="bc2-ar">قطر · تعاون مصرفي تقني</span></span>
+    </div>
+    <div class="bc2-bank-message">
+      <p><span class="bc2-en">Doha Bank has approved advancing BioVault's BalanceChain technology to the technical testing phase within the bank's environment. Testing is currently underway to verify its operation, identify potential issues and address them through technical validation.</span><span class="bc2-ar">وافق بنك الدوحة على انتقال تقنية BalanceChain التابعة لشركة BioVault إلى مرحلة الاختبارات التقنية داخل بيئة البنك. وتخضع التقنية حاليًا لاختبارات تهدف إلى التحقق من سلامة عملها واكتشاف أي أخطاء محتملة ومعالجتها ضمن إجراءات التحقق الفني.</span></p>
+      <p class="bc2-bank-note"><span class="bc2-en">This describes approval for the testing phase, not completion of validation or production deployment. No confidential testing details are presented.</span><span class="bc2-ar">تشير الموافقة هنا إلى مرحلة الاختبار، وليس إلى اكتمال التحقق أو التشغيل الإنتاجي. لا تُعرض أي تفاصيل سرية عن الاختبارات.</span></p>
+    </div>
+  </div>
+  <div class="bc2-cards">
+    <article class="bc2-card">
+      <span class="bc2-card-flag"><span class="bc2-en">01 / THE VISIBILITY GAP</span><span class="bc2-ar">01 / فجوة الرؤية</span></span>
+      <h4><span class="bc2-en">A balance tells you how much.<br>What about its history?</span><span class="bc2-ar">الرصيد يخبرك بالكمية.<br>ماذا عن تاريخ القيمة؟</span></h4>
+      <p><span class="bc2-en">A ledger records balances and transactions. It does not necessarily preserve each component of value as a separately identifiable, continuously queryable state. Source attribution may depend on additional records or an explicitly declared selection rule.</span><span class="bc2-ar">تسجل الأنظمة البنكية الأرصدة والمعاملات، لكنها لا تحتفظ بالضرورة بكل جزء من القيمة كحالة مستقلة قابلة للاستعلام المستمر. وقد يتطلب إسناد القيمة إلى مصدرها سجلات إضافية أو قاعدة اختيار معلنة.</span></p>
+    </article>
+    <article class="bc2-card">
+      <span class="bc2-card-flag"><span class="bc2-en">02 / HOW IT WORKS</span><span class="bc2-ar">02 / آلية العمل</span></span>
+      <h4><span class="bc2-en">Value Objects.<br>Recorded continuity.</span><span class="bc2-ar">كائنات قيمة رقمية.<br>استمرارية مسجلة.</span></h4>
+      <p><span class="bc2-en">BalanceChain proposes identifiable Value Objects for exact amounts of existing value. Their recorded ancestry and contributions can remain represented as value splits or merges. The underlying ledger stays authoritative for balances and settlement.</span><span class="bc2-ar">يعتمد التصور التقني على كائنات قيمة قابلة للتعريف تمثل مبالغ محددة من القيمة القائمة. ويمكن الاحتفاظ بعلاقات أصولها ومساهماتها المسجلة عند تقسيم القيمة أو دمجها، مع بقاء الدفتر البنكي المرجع المعتمد للأرصدة والتسوية.</span></p>
+      <div class="bc2-flow" aria-label="Recorded value-state model">
+        <div><span class="bc2-en">Existing ledger</span><span class="bc2-ar">الدفتر البنكي</span><small><span class="bc2-en">Authoritative</span><span class="bc2-ar">مرجع معتمد</span></small></div>
+        <div><span class="bc2-en">Value state</span><span class="bc2-ar">حالة القيمة</span><small><span class="bc2-en">Representation</span><span class="bc2-ar">تمثيل إضافي</span></small></div>
+        <div><span class="bc2-en">Recorded lineage</span><span class="bc2-ar">سجل العلاقات</span><small><span class="bc2-en">Within scope</span><span class="bc2-ar">ضمن النطاق</span></small></div>
+      </div>
+    </article>
+  </div>
+  <div class="bc2-usecases">
+    <span class="bc2-card-flag"><span class="bc2-en">03 / POSSIBLE INSTITUTIONAL APPLICATIONS</span><span class="bc2-ar">03 / تطبيقات مؤسسية محتملة</span></span>
+    <h4><span class="bc2-en">One representation. Different questions.</span><span class="bc2-ar">تمثيل واحد. استخدامات متعددة.</span></h4>
+    <p><span class="bc2-en">Possible use cases depend on the institution's data, authorization and integration requirements. Each must be validated for practical value rather than assumed to be production-ready.</span><span class="bc2-ar">تعتمد حالات الاستخدام على بيانات المؤسسة وصلاحياتها ومتطلبات التكامل، ويجب التحقق من جدوى كل تطبيق عمليًا، دون افتراض جاهزيته للتشغيل الإنتاجي.</span></p>
+    <div class="bc2-pills">
+      <span><span class="bc2-en">Source-composition analysis</span><span class="bc2-ar">تحليل مصادر القيمة</span></span>
+      <span><span class="bc2-en">Pooled-fund attribution</span><span class="bc2-ar">إسناد الأموال المجمّعة</span></span>
+      <span><span class="bc2-en">Reconciliation support</span><span class="bc2-ar">دعم المطابقة المالية</span></span>
+      <span><span class="bc2-en">Authorized workflows</span><span class="bc2-ar">إجراءات وفق الصلاحيات</span></span>
+    </div>
+  </div>
+  <div class="bc2-boundary">
+    <strong><span class="bc2-en">04 / INTEGRATION & OBSERVATION BOUNDARIES</span><span class="bc2-ar">04 / التكامل وحدود الرصد</span></strong>
+    <p><span class="bc2-en">BalanceChain does not independently discover the origin of all funds or claim continuous visibility outside sufficiently integrated systems. When a source is attributed under a declared rule rather than explicitly recorded, that distinction must be clear. The demonstration above uses entirely synthetic data and is not a representation of the bank's test environment.</span><span class="bc2-ar">لا تكتشف BalanceChain بصورة مستقلة المصدر الأصلي لجميع الأموال، ولا تدّعي استمرار التتبع خارج الأنظمة المتكاملة التي تتوفر فيها الأدلة اللازمة. ويجب التمييز بين المصدر المسجل صراحة والمصدر المحدد وفق قاعدة معلنة. وتستخدم المحاكاة أعلاه بيانات افتراضية بالكامل ولا تمثل بيئة اختبار البنك.</span></p>
+  </div>
+  <div class="bc2-actions">
+    <a class="bc2-primary" href="mailto:partners@biovaultsa.com?subject=BalanceChain%20Institutional%20Discussion"><span class="bc2-en">Discuss an Institutional Use Case</span><span class="bc2-ar">ناقش حالة استخدام لمؤسستك</span> <span aria-hidden="true">↗</span></a>
+    <a class="bc2-secondary" href="#balanceInteractive"><span class="bc2-en">Return to Interactive Demo</span><span class="bc2-ar">العودة إلى المحاكاة التفاعلية</span> <span aria-hidden="true">↥</span></a>
+  </div>
+</section>
+</div>
    <div id="stageVenture" class="stage stage-venture" role="tabpanel" hidden>
   <div class="bc-film venture-film" id="ventureFilm">
     <div class="bc-film-head"><div><span class="bc-film-flag">BIOVAULT ORIGINAL SHOWCASE · 02</span>
