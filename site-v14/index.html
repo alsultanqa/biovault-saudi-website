@@ -464,6 +464,27 @@ function syncFilmLocale(){
 }
 document.getElementById('language')?.addEventListener('click',syncFilmLocale);
 syncFilmLocale();
+/* Only try audible autoplay after the film is visible for 3 seconds.
+   If the browser blocks sound, leave the video paused with sound ON;
+   never silently mute it or hide the visitor's Play control. */
+const filmPlayAttempted=new WeakSet(),filmPlayPending=new WeakMap();
+const filmObserver=new IntersectionObserver(entries=>{
+ for(const entry of entries){
+  const player=entry.target, visible=entry.isIntersecting&&entry.intersectionRatio>=.55&&!player.closest('.stage')?.hidden;
+  const prior=filmPlayPending.get(player);
+  if(!visible){if(prior){clearTimeout(prior);filmPlayPending.delete(player)}continue;}
+  if(filmPlayAttempted.has(player)||prior||window.matchMedia('(prefers-reduced-motion: reduce)').matches)continue;
+  filmPlayPending.set(player,setTimeout(()=>{
+   filmPlayPending.delete(player);
+   const r=player.getBoundingClientRect();
+   if(document.hidden||player.closest('.stage')?.hidden||r.bottom<0||r.top>innerHeight||!player.paused)return;
+   filmPlayAttempted.add(player);player.muted=false;
+   const result=player.play();
+   if(result&&result.catch)result.catch(()=>{player.pause();player.muted=false;});
+  },3000));
+ }
+},{threshold:[0,.55]});
+document.querySelectorAll('.bv13-film video').forEach(v=>filmObserver.observe(v));
 console.info('BioVault V13 added films:',attached);
 })();
 </script>
