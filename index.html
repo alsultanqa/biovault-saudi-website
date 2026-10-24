@@ -325,6 +325,44 @@ html[lang="ar"] .ej2-note{border-right:3px solid #65e4b5;border-left:0}
 .bv-details-hub{width:100%;position:relative;overflow:visible;z-index:1;clear:both}
 .bv-details-hub>section[hidden]{display:none!important}
 </style>
+
+<style id="bv-stage-visibility-styles">
+/* Fix: the film and visual scenes must both take part in document layout. */
+.stage-endless,.stage-custom{height:auto!important;min-height:0!important;overflow:visible!important;display:flow-root}
+.stage-endless[hidden],.stage-custom[hidden]{display:none!important}
+.stage-endless .endless-world,.stage-custom .custom-world{height:660px;min-height:660px;position:relative}
+@media(max-width:710px){
+ .stage-endless .endless-world{height:840px!important;min-height:840px!important}
+ .stage-custom .custom-world{height:820px!important;min-height:820px!important}
+}
+.ejdemo{box-sizing:border-box;max-width:1190px;width:calc(100% - 40px);margin:0 auto 34px;padding:27px clamp(17px,3vw,34px);border:1px solid rgba(107,235,186,.35);border-radius:17px;background:linear-gradient(130deg,rgba(6,55,50,.97),rgba(4,26,35,.98));color:#e6f7ed;text-align:left;direction:ltr;position:relative;z-index:2;clear:both}
+html[lang="ar"] .ejdemo{direction:rtl;text-align:right}
+html:not([lang="ar"]) .ejdemo-ar,html[lang="ar"] .ejdemo-en{display:none!important}
+.ejdemo-tag{display:inline-flex;align-items:center;gap:8px;color:#83f0c0;font-weight:800;font-size:10px;letter-spacing:.13em}
+.ejdemo-tag:before{content:"";width:7px;height:7px;border-radius:50%;background:#64e3b2}
+.ejdemo h4{font:400 clamp(25px,3.1vw,35px)/1.2 Georgia,'Noto Naskh Arabic',serif;color:white;margin:12px 0 8px}
+.ejdemo-summary{color:#b9d6c9;font-size:13px;line-height:1.85;margin:0 0 23px;max-width:900px}
+.ejdemo-main{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:19px;align-items:stretch}
+.ejdemo-choices{display:grid;grid-template-columns:1fr;gap:9px}
+.ejdemo-choice{font-family:inherit;appearance:none;border:1px solid #33645c;background:rgba(16,69,64,.66);border-radius:9px;padding:14px 16px;color:#ebfff4;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:14px;cursor:pointer;font-size:13px;font-weight:700;min-height:53px}
+html[lang="ar"] .ejdemo-choice{text-align:right}
+.ejdemo-choice:hover{background:rgba(34,112,91,.62)}
+.ejdemo-choice[aria-pressed="true"]{background:rgba(43,128,95,.73);border-color:#67e7ad;box-shadow:inset 0 0 0 1px rgba(117,242,192,.15)}
+.ejdemo-choice:focus-visible,.ejdemo-button:focus-visible,.ejdemo a:focus-visible{outline:2px solid #80f5c7;outline-offset:3px}
+.ejdemo-choice small{color:#a4d9c3;font-size:10px;font-weight:500;white-space:nowrap}
+.ejdemo-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.ejdemo-button{font-family:inherit;border:0;padding:13px 18px;background:#61e3b0;color:#06382c;border-radius:8px;cursor:pointer;font-weight:800;font-size:12px}
+.ejdemo-reset{background:transparent;border:1px solid #47786b;color:#d2ebdf}
+.ejdemo-match{border:1px solid #34685a;background:rgba(2,28,34,.84);padding:21px;border-radius:12px;min-height:218px}
+.ejdemo-result-kicker{font-size:10px;font-weight:800;letter-spacing:.12em;color:#78dcb5}
+.ejdemo-match h5{font:400 clamp(22px,2.7vw,28px)/1.24 Georgia,'Noto Naskh Arabic',serif;color:#fff;margin:15px 0 9px}
+.ejdemo-match p{color:#bed9d0;font-size:13px;line-height:1.8;margin:0}
+.ejdemo-match[aria-busy="true"]{opacity:.8}
+.ejdemo-foot{color:#92b9aa;font-size:11px;line-height:1.75;margin:19px 0 0}
+.ejdemo-more{display:inline-block;margin-top:16px;font-size:12px;color:#81edbf!important;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:760px){.ejdemo{width:calc(100% - 26px);padding:20px 16px;margin-bottom:28px}.ejdemo-main{grid-template-columns:1fr;gap:14px}.ejdemo-cta{display:grid;grid-template-columns:1fr 1fr}.ejdemo-button{padding:13px 9px}.ejdemo-choice{padding:12px 13px}}
+@media(max-width:350px){.ejdemo-cta{grid-template-columns:1fr}.ejdemo-choice small{white-space:normal}}
+</style>
 </head>
 <body>
 <div class="filmgrain" aria-hidden="true"></div><div class="page-progress" id="pageProgress"></div>
@@ -490,6 +528,33 @@ function next(){state.scene=state.scene&gt;=3?0:state.scene+1;render()}$(&#x27;n
      </div>
 
 
+
+
+<section id="endlessjob-demo" class="ejdemo" aria-label="EndlessJob interactive capability matching demonstration">
+ <div class="ejdemo-tag"><span class="ejdemo-en">INTERACTIVE EXPLORER · SYNTHETIC DATA</span><span class="ejdemo-ar">محاكاة تفاعلية · بيانات افتراضية</span></div>
+ <h4><span class="ejdemo-en">Choose a capability. Explore a possible task.</span><span class="ejdemo-ar">اختر مهارة، واستكشف مهمة افتراضية مناسبة.</span></h4>
+ <p class="ejdemo-summary"><span class="ejdemo-en">Try the concept yourself. Select a capability, then reveal an illustrative opportunity and the work it could involve.</span><span class="ejdemo-ar">جرّب الفكرة بنفسك: اختر إحدى المهارات، ثم اعرض مثالًا لمهمة محتملة وطبيعة العمل المطلوب فيها.</span></p>
+ <div class="ejdemo-main">
+  <div>
+   <div class="ejdemo-choices" role="group" aria-label="Select a capability">
+    <button class="ejdemo-choice" type="button" data-ejdemo-skill="research" aria-pressed="true"><span><span class="ejdemo-en">Research &amp; Analysis</span><span class="ejdemo-ar">البحث والتحليل</span></span><small>01</small></button>
+    <button class="ejdemo-choice" type="button" data-ejdemo-skill="content" aria-pressed="false"><span><span class="ejdemo-en">Writing &amp; Communication</span><span class="ejdemo-ar">الكتابة والتواصل</span></span><small>02</small></button>
+    <button class="ejdemo-choice" type="button" data-ejdemo-skill="operations" aria-pressed="false"><span><span class="ejdemo-en">Operations &amp; Organization</span><span class="ejdemo-ar">العمليات والتنظيم</span></span><small>03</small></button>
+   </div>
+   <div class="ejdemo-cta">
+    <button id="ejdemo-match" class="ejdemo-button" type="button"><span class="ejdemo-en">Show Example Match ↗</span><span class="ejdemo-ar">اعرض مهمة مناسبة ↗</span></button>
+    <button id="ejdemo-reset" class="ejdemo-button ejdemo-reset" type="button"><span class="ejdemo-en">Start Again ↺</span><span class="ejdemo-ar">ابدأ من جديد ↺</span></button>
+   </div>
+  </div>
+  <div id="ejdemo-result" class="ejdemo-match" role="status" aria-live="polite" aria-atomic="true">
+    <div class="ejdemo-result-kicker"><span class="ejdemo-en">YOUR ILLUSTRATIVE OPPORTUNITY</span><span class="ejdemo-ar">الفرصة التوضيحية</span></div>
+    <h5 id="ejdemo-title"><span class="ejdemo-en">Ready to explore?</span><span class="ejdemo-ar">جاهز لاستكشاف الفرص؟</span></h5>
+    <p id="ejdemo-description"><span class="ejdemo-en">Choose a capability and select “Show Example Match” to reveal an example mission.</span><span class="ejdemo-ar">اختر مهارة واضغط «اعرض مهمة مناسبة» لمشاهدة مثال افتراضي.</span></p>
+    <a class="ejdemo-more" href="#endlessjob-insight"><span class="ejdemo-en">Read About EndlessJob</span><span class="ejdemo-ar">اقرأ المزيد عن EndlessJob</span> ↘</a>
+  </div>
+ </div>
+ <p class="ejdemo-foot"><span class="ejdemo-en">All skills, profiles and missions in this interactive explorer are fictional examples. This is a concept demonstration, not live matching or a job offer.</span><span class="ejdemo-ar">جميع المهارات والملفات والمهام في هذه المحاكاة أمثلة افتراضية. ليست مطابقة حقيقية مع فرص عمل أو عرض توظيف.</span></p>
+</section>
 
    </div>
    <div id="stageCustom" class="stage stage-custom" role="tabpanel" hidden>
@@ -757,12 +822,12 @@ const products={balance:['balanceLabel','balanceTitle','balanceSub','balancePhas
 function tr(){return dictionaries[state.lang]}
 const text=(id,value)=>{$(id).textContent=value};const html=(id,value)=>{$(id).innerHTML=value};
 function renderLanguage(){let t=tr();document.documentElement.lang=state.lang;document.documentElement.dir=state.lang==='ar'?'rtl':'ltr';$('language').innerHTML=state.lang==='en'?'العربية <span>↗</span>':'English <span>↗</span>';document.querySelectorAll('[data-i18n]').forEach(el=>{let key=el.getAttribute('data-i18n');if(t[key]){if(/<br|<em/.test(t[key]))el.innerHTML=t[key];else el.textContent=t[key]}});html('heroTitle',t.heroTitle);document.title=state.lang==='ar'?'BioVault Software Solutions | حلول برمجية':'BioVault Software Solutions | Technology & Innovation';renderProduct();}
-function renderProduct(){const t=tr(), p=products[state.product];text('productKicker',t[p[0]]);html('productTitle',t[p[1]]);text('productIntro',t[p[2]]);text('productPhase',t[p[3]]);document.querySelectorAll('.sel').forEach(btn=>{let on=btn.dataset.select===state.product;btn.classList.toggle('active',on);btn.setAttribute('aria-selected',String(on))});for(const name of Object.keys(products)){let el=$('stage'+name.charAt(0).toUpperCase()+name.slice(1));el.hidden=name!==state.product;el.classList.toggle('active',name===state.product)}const detailLinks={balance:'#balancechain-insight',venture:'#venture-sentinel-insight',endless:'#endlessjob-insight'};
+function renderProduct(){const t=tr(), p=products[state.product];text('productKicker',t[p[0]]);html('productTitle',t[p[1]]);text('productIntro',t[p[2]]);text('productPhase',t[p[3]]);document.querySelectorAll('.sel').forEach(btn=>{let on=btn.dataset.select===state.product;btn.classList.toggle('active',on);btn.setAttribute('aria-selected',String(on))});for(const name of Object.keys(products)){let el=$('stage'+name.charAt(0).toUpperCase()+name.slice(1));el.hidden=name!==state.product;el.classList.toggle('active',name===state.product)}const detailLinks={balance:'#balancechain-insight',venture:'#venture-sentinel-insight',endless:'#endlessjob-demo'};
 const overview=$('bvReadDetails');
 overview.hidden=!detailLinks[state.product];
 if(detailLinks[state.product]){
  overview.href=detailLinks[state.product];
- overview.innerHTML=(state.lang==='ar'?'اقرأ التفاصيل الكاملة للمشروع':'Explore Full Project Details')+' <span aria-hidden="true">↘</span>';
+ overview.innerHTML=(state.product==='endless'?(state.lang==='ar'?'جرّب محاكاة EndlessJob':'Try EndlessJob Interactive Demo'):(state.lang==='ar'?'اقرأ التفاصيل الكاملة للمشروع':'Explore Full Project Details'))+' <span aria-hidden="true">↘</span>';
  overview.setAttribute('aria-label',(state.lang==='ar'?'انتقل إلى شرح ':'Read the full overview of ')+({balance:'BalanceChain',venture:'Venture Sentinel',endless:'EndlessJob'}[state.product]));
 }
 document.querySelectorAll('#bvDetailsHub > section').forEach(section=>{
@@ -970,7 +1035,8 @@ video.addEventListener('error',()=>{const p=dialog.querySelector('.bv15-player-n
  const sections={
   '#balancechain-insight':'balance',
   '#venture-sentinel-insight':'venture',
-  '#endlessjob-insight':'endless'
+  '#endlessjob-insight':'endless',
+  '#endlessjob-demo':'endless'
  };
  function activate(){
   const hash=decodeURIComponent(location.hash);
@@ -1004,4 +1070,44 @@ video.addEventListener('error',()=>{const p=dialog.querySelector('.bv15-player-n
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',activate,{once:true});
  else activate();
 })();
-</script></body></html>
+</script><script id="ejdemo-behavior">
+(function(){
+ const host=document.getElementById('endlessjob-demo');
+ if(!host)return;
+ const choices=Array.from(host.querySelectorAll('[data-ejdemo-skill]'));
+ const result=host.querySelector('#ejdemo-result');
+ const header=host.querySelector('#ejdemo-title');
+ const paragraph=host.querySelector('#ejdemo-description');
+ const dictionary={
+  research:{en:['Research Opportunity Brief','Prepare a structured overview of a fictional market, including key competitors, assumptions and open questions.'],ar:['إعداد موجز بحثي للسوق','إعداد نظرة منظمة لسوق افتراضي تشمل أبرز المنافسين والافتراضات والأسئلة التي تحتاج إلى تحقق.']},
+  content:{en:['Explain a Product Clearly','Draft a short product introduction and three helpful customer FAQs for a fictional business.'],ar:['صياغة تعريف واضح بمنتج','كتابة نبذة قصيرة عن منتج وإعداد ثلاثة أسئلة شائعة مفيدة للعملاء لصالح شركة افتراضية.']},
+  operations:{en:['Organize a Team Workflow','Map how a fictional team receives requests, prioritizes work and reviews completion.'],ar:['تنظيم سير عمل فريق','رسم خطوات استقبال الطلبات وتحديد أولوياتها ومراجعة إنجازها ضمن فريق افتراضي.']}
+ };
+ let chosen='research',matched=false;
+ const currentLang=()=>document.documentElement.lang==='ar'?'ar':'en';
+ function render(){
+  choices.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.ejdemoSkill===chosen)));
+  if(!matched){
+   header.innerHTML='<span class="ejdemo-en">Ready to explore?</span><span class="ejdemo-ar">جاهز لاستكشاف الفرص؟</span>';
+   paragraph.innerHTML='<span class="ejdemo-en">Choose a capability and select “Show Example Match” to reveal an example mission.</span><span class="ejdemo-ar">اختر مهارة واضغط «اعرض مهمة مناسبة» لمشاهدة مثال افتراضي.</span>';
+  }else{
+   header.textContent=dictionary[chosen][currentLang()][0];
+   paragraph.textContent=dictionary[chosen][currentLang()][1];
+  }
+ }
+ choices.forEach(button=>button.addEventListener('click',()=>{
+  chosen=button.dataset.ejdemoSkill;matched=false;render();
+ }));
+ host.querySelector('#ejdemo-match').addEventListener('click',()=>{matched=true;render()});
+ host.querySelector('#ejdemo-reset').addEventListener('click',()=>{
+  chosen='research';matched=false;render();choices[0].focus();
+ });
+ document.getElementById('language')?.addEventListener('click',()=>{
+   requestAnimationFrame(render);
+   setTimeout(render,100);
+ });
+ new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+ render();
+})();
+</script>
+</body></html>
